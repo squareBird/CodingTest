@@ -27,7 +27,6 @@ public class 퇴사dp {
             P[i] = Integer.parseInt(str[1]);
         }
 
-        1
 
         for(int i=1;i<=N+1;i++) {
 
