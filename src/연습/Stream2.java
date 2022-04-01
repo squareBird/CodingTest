@@ -25,12 +25,24 @@ public class Stream2 {
 
     public static void main(String[] args) {
 
-        Stream2[] st = new Stream2[10];
-        for (int i = 0; i < 10; i++) {
-            st[i] = new Stream2();
-            st[i].age = i;
-            st[i].name = (int) ((Math.random() * 10000)) + "";
-        }
+        // 배열 선언
+        Integer[] temp = {1,2,3,4};
+        // 배열을 스트림으로 변환
+        Stream<Integer> stream = Arrays.stream(temp);
+        // 스트림을 활용한 프린트
+        stream.forEach(System.out::println);
+        // 스트림을 재사용
+        stream.forEach(System.out::println);
+
+
+
+
+//        Stream2[] st = new Stream2[10];
+//        for (int i = 0; i < 10; i++) {
+//            st[i] = new Stream2();
+//            st[i].age = i;
+//            st[i].name = (int) ((Math.random() * 10000)) + "";
+//        }
 
 //        // 정렬기준 하나
 //        System.out.println("1. 정렬기준 하나");

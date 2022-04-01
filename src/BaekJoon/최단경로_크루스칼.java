@@ -10,7 +10,7 @@ public class 최단경로_크루스칼 {
     static int V, E;
 
     class Node {
-        int
+        int a;
     }
 
     public static void main(String[] args) {
