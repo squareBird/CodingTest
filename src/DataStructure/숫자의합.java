@@ -1,4 +1,4 @@
-package BaekJoon.DataStructure;
+package DataStructure;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;

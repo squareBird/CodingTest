@@ -1,4 +1,4 @@
-package BaekJoon.Graph;
+package Graph;
 
 import java.util.*;
 
