@@ -17,22 +17,18 @@ public class Deduplication {
                 "만약 오후 4시에 네가 온다면, 나는 3시부터 행복해지기 시작할 거야.\n" +
                 "어른들은 누구나 처음엔 어린이였다. 그러나 그것을 기억하는 어른은 별로 없다.\n" +
                 "가장 중요한 건 눈에 보이지 않아.\n" +
+                "가장 중요한 건 눈에 보이지 않아.\n" +
+                "가장 중요한 건 눈에 보이지 않아.\n" +
                 "부탁이 있는데요, 양 한 마리만 그려줘.";
 
         Deduplication d = new Deduplication();
         d.solution(word);
     }
 
-
-    /**
-     * '.'으로 구분된 문장이 들어있는 데이터
-     *
-     * @param words
-     */
     public void solution(String words) {
 
         // 중복을 제거해 저장하기 위한 컬렉션 선언
-        Set<String> s = new HashSet<>();
+        Map<String, Integer> map = new HashMap<>();
 
         int index = -1;
 
@@ -50,24 +46,15 @@ public class Deduplication {
             // 문장의 시작부분 ~ '.'이 있는 부분까지 문자열을 쪼갠 후 Set에 삽입
             // 쪼개진 문자열의 맨앞과 맨 뒤의 '.' 또는 줄바꿈 제거
             String temp = words.substring(0,index+1);
-            s.add(temp.trim());
+            map.put(temp.trim(), map.getOrDefault(temp.trim(), 0)+1);
 
             // 기존의 words 문자열을 '.'의 다음 index부터 끝까지 substring
             words = words.substring(index+1);
 
         }
 
-        // 출력
-        Iterator<String> it = s.iterator();
-        
-        while(it.hasNext()) {
-            System.out.println(it.next());
-        }
-
-        int[] arr = new int[Integer.MAX_VALUE];
-        String[] word = {"1","2"};
-        for(String temp : word) {
-            arr[temp.hashCode()]++;
+        for(String key : map.keySet()) {
+            System.out.println(map.get(key) + "개" + " : " + key);
         }
 
     }
